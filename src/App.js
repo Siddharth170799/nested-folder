@@ -9,9 +9,9 @@ function App() {
         position="top-right"
         richColors
         style={{
-          ["--success-bg"]: "#16a34a",
-          ["--success-border"]: "#15803d",
-          ["--success-text"]: "#ffffff",
+          "--success-bg": "#16a34a",
+          "--success-border": "#15803d",
+          "--success-text": "#ffffff",
         }}
       />
       <NestedFolder />

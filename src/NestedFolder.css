@@ -1,0 +1,118 @@
+.nested-folder-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* change this */
+}
+
+.nested-folder-heading {
+  font-size: 18px;
+  margin-bottom: 12px;
+  color: var(--vscode-accent);
+  letter-spacing: 0.4px;
+}
+
+.nested-folder {
+  width: 420px;
+  background: var(--vscode-bg);
+  color: var(--vscode-text);
+  padding: 14px 18px;
+  border-radius: 10px;
+  border: 1px solid var(--vscode-border);
+  transition: all 0.3s ease;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+}
+
+.nested-folder__list {
+  padding-left: 10px;
+  transition: all 0.3s ease;
+}
+
+.nested-folder__item {
+  padding: 5px 6px;
+  border-radius: 6px;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.nested-folder__item:hover {
+  background: var(--vscode-hover);
+  transform: translateX(2px);
+}
+
+.nested-folder__row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nested-folder__arrow {
+  cursor: pointer;
+  font-size: 12px;
+  color: var(--vscode-accent);
+  user-select: none;
+  transition: transform 0.2s ease;
+}
+
+.nested-folder__icon {
+  font-size: 16px;
+}
+
+.nested-folder__name {
+  flex: 1;
+  font-size: 14px;
+  letter-spacing: 0.3px;
+  margin: 0;
+  transition: color 0.2s ease;
+}
+
+.nested-folder__item:hover .nested-folder__name {
+  color: var(--vscode-accent);
+}
+
+/* Add/Delete buttons */
+.nested-folder__toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  opacity: 0.8;
+  user-select: none;
+}
+
+.nested-folder__toggle.add {
+  color: var(--vscode-success);
+}
+
+.nested-folder__toggle.remove {
+  color: var(--vscode-danger);
+}
+
+.nested-folder__toggle:hover {
+  transform: scale(1.2);
+  background: rgba(255, 255, 255, 0.08);
+  opacity: 1;
+}
+
+/* Nested indentation */
+.nested-folder__item .nested-folder__list {
+  margin-left: 20px;
+  margin-top: 6px;
+  border-left: 1px dashed var(--vscode-border);
+  padding-left: 10px;
+}
+
+/* Highlight folders that contain children */
+.nested-folder__item.has-children > .nested-folder__row .nested-folder__icon {
+  color: var(--vscode-accent);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .nested-folder {
+    width: 100%;
+  }
+}
